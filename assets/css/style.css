@@ -1,0 +1,1475 @@
+/* Настройка всех элементов страницы */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Подключение шрифтов */
+@font-face {
+	font-family: "Montserrat-SemiBold";
+	src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url(../fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+	font-family: "Montserrat-Light";
+	src: url(../fonts/Montserrat-Light.ttf);
+}
+
+a{
+	text-decoration: none;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-transform: uppercase;
+	color: #0E0C0D;
+}
+body{
+ color: #231F20;
+ font-family: "Montserrat-SemiBold";
+}
+
+/* Шапка сайта */
+header{
+	width: 100%;
+	height: 100px;
+	padding-top: 10px;
+}
+.header{
+	width: 1300px;
+	height: 80px;
+	margin: 0 auto;
+}
+.head{
+	display: flex;
+	justify-content: space-between;
+}
+.logotype{
+	width: 100px;
+}
+.logotype img{
+	width: 65px;
+	height: 75x;
+}
+.restoran{
+	width: 600px;
+	float: left;
+	font-size: 16px;
+	padding-top: 10px;
+	position: relative;
+}
+.restoran img{
+	margin-left: 2px;	
+}
+.ellipse-menu{
+	position: absolute;
+	top: 400px;
+}
+.rzn-menu-txt{
+	color: #F7D22D;
+	margin-left: 10px;
+}
+.restoran-txt{
+	font-size: 15px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.zvonok{
+	width: 800px;
+	text-align: right;
+	padding-top: 10px;
+}
+.phone-menu{
+	color: #F7D22D;
+	font-size: 26px;
+	margin-left: 40px;
+	font-family: "Montserrat-Bold";
+}
+.zakaz-zvonok{
+	background-color: #F3F3F7;
+	width: 180px;
+	height: 40px;
+	color: #696F7A;
+	font-family: "Montserrat-Bold";
+	border-radius: 28px;
+	border: none;
+	font-size: 14px;
+	cursor: pointer;
+}
+.menu{
+	margin-top: 15px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.sale-link{
+	color: #FF0000;
+}
+.menu-link{
+	margin-right: 15px;
+}
+.profile-link{
+	color: #696F7A;
+	font-family: "Montserrat-Bold";
+	margin-right: 15px;
+
+}
+.auth-modal{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background-color: #f7d22d5e;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transform: opacity .4, visibility .4s;
+}
+.time-modal{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background-color: #f7d22d5e;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transform: opacity .4, visibility .4s;
+}
+.reg-modal{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background-color: #f7d22d5e;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transform: opacity .4, visibility .4s;
+}
+.zvonok-modal{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 999;
+	background-color: #f7d22d5e;
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+	visibility: hidden;
+	opacity: 0;
+	transform: opacity .4, visibility .4s;
+}
+.modal-box{
+	position: relative;
+	font-family: "Montserrat-Bold";
+	width: 600px;
+	padding: 45px;
+	z-index: 1;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	transform: scale(0);
+	transition: transform .8s;
+	border-radius: 12px;
+	text-align: center;
+}
+.modal-box-time{
+	position: relative;
+	font-family: "Montserrat-Bold";
+	width: 600px;
+	padding: 45px;
+	z-index: 1;
+	background-color: #E3ECF5;
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	transform: scale(0);
+	transition: transform .8s;
+	border-radius: 12px;
+	text-align: center;
+}
+.modal-box-time h2{
+	color: #696F7A;
+	margin-bottom: 40px;
+}
+
+.modal-box h2{
+	text-align: center;
+	margin-bottom: 50px;
+	margin-top: 10px;
+	color: #F7D22D;
+}
+.auth-modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+.auth-modal.open .modal-box {
+	transform: scale(1);
+}
+.time-modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+.time-modal.open .modal-box-time {
+	transform: scale(1);
+}
+.reg-modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+.reg-modal.open .modal-box {
+	transform: scale(1);
+}
+.zvonok-modal.open {
+	visibility: visible;
+	opacity: 1;
+}
+.zvonok-modal.open .modal-box {
+	transform: scale(1);
+}
+.zvonok-modal-form{
+	display: flex;
+	justify-content: space-between;
+}
+.zvonok-modal-form p{
+	font-size: 12px;
+	text-align: right;
+}
+.modal-close{
+	border: none;
+	padding: 10px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background-color: transparent;
+	cursor: pointer;
+}
+.zvonok-input-txt{
+	width: 250px;
+	outline: none;
+	border: 2px solid #E2E2E9;
+	height: 45px;
+	margin-bottom: 40px;
+	font-size: 20px;
+	padding: 10px 0;
+	border-radius: 8px;
+	outline: none;
+	background: transparent;
+}
+.input-txt{
+	width: 450px;
+	outline: none;
+	border: 2px solid #E2E2E9;
+	height: 45px;
+	margin-bottom: 40px;
+	font-size: 20px;
+	padding: 10px 0;
+	border-radius: 8px;
+	outline: none;
+	background: transparent;
+}
+.btn-to-profile{
+	background-color: #F7D22D;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	width: 150px;
+	height: 42px;
+	justify-content: center;
+	margin: 0 auto;
+	display: block;
+	font-size: 20px;
+	cursor: pointer;
+}
+.label-form-zvonok{
+	position: absolute;
+	top:0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #000;
+	pointer-events: none;
+	transition: .5s;
+	text-align: center;
+	
+}
+.label-form{
+	position: absolute;
+	top:0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #000;
+	pointer-events: none;
+	transition: .5s;
+	text-align: center;
+	padding-left: 30px;
+}
+.modal-box .user-box input:focus ~ label,
+.modal-box .user-box input:valid ~ label {
+  top: -35px;
+  color: #000;
+  font-size: 16px;
+  margin-left: 5px;
+}
+.modal-box-time .user-box input:focus ~ label,
+.modal-box-time .user-box input:valid ~ label {
+  top: -35px;
+  color: #000;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.modal-box .user-box {
+	position: relative;
+	
+ }
+ .modal-box-time .user-box {
+	position: relative;
+	
+ }
+/* Главная страница */
+.new{
+	margin: 0 auto;
+	width: 1300px;
+	margin-top: 50px;
+	margin-bottom: 150px;
+}
+.cards{
+	display: flex;
+	justify-content: space-between;
+	height: 400px;
+}
+.cards-img:hover{
+	opacity: 0,1;
+}
+
+.novinki-h1{
+	font-size: 24px;
+	margin-top: 20px;
+	font-family: "Montserrat-Bold";
+}
+.novinki{
+	display: flex;
+	justify-content: space-between;
+	width: 1200px;
+	margin: 0 auto;
+}
+.novinki-cards{
+	width: 255px;
+	height: 100px;
+	background-color: #ffffff;
+	margin-top: 20px;
+	border-radius: 15px;
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	padding-top: 13px;
+	display: flex;
+}
+.novinki-cards-img{
+	padding-left: 15px;
+}
+.novinki-cards-img img{
+	width: 71px;
+	height: 71px;
+}
+.card-txt{
+	padding-left: 25px;
+	padding-top: 10px;
+	font-size: 10px;
+	font-family: "Montserrat-Bold";
+	float: left;
+}
+.card-txt h2{
+	color: #F7D22D;
+	padding-top: 8px;
+	font-size: 16px;
+}
+.man-with-pizza{
+	position: absolute;
+	top:550px;
+}
+.man-with-pizza-contacts{
+	position: absolute;
+	top: 200px;
+}
+.women-with-pizza{
+	position: absolute;
+	top: 2400px;
+	right: 0;
+	z-index: 1;
+}
+.main-inform{
+	width: 1300px;
+	margin: 0 auto;
+}
+.assortiment{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 200px;
+}
+.choice{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 100px;
+}
+
+.assortiment-txt{
+	width: 550px;
+	text-align: center;
+	margin-left: 50px;
+	line-height: 1.4;
+	margin-top: 25px;
+}
+.assortiment-txt h1{
+	font-size: 28px;
+	font-family: "Montserrat-Bold";
+	margin-bottom: 30px;
+}
+.assortiment-txt h2{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.choice-txt{
+	width: 550px;
+	text-align: center;
+	margin-right: 50px;
+	line-height: 1.4;
+}
+.choice-txt h1{
+	font-size: 28px;
+	font-family: "Montserrat-Bold";
+	margin-bottom: 30px;
+}
+.choice-txt h2{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.choice-img{
+	margin-left: 55px;
+	margin-top: -70px;
+}
+.assortiment-img{
+margin-right: 55px;
+}
+.action{
+	width: 1300px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.action-h1{
+	text-align: center;
+	margin-bottom: 50px;
+	font-family: "Montserrat-Bold";
+}
+.action-h1 b{
+	color: #F7D22D;
+}
+.action-img{
+	border-radius: 20px;
+	margin-bottom: 30px;
+}
+.btn-action{
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+	color: #FFFFFF;
+	width: 160px;
+	height: 48px;
+	background-color: #F7D22D;
+	border: none;
+	font-size: 18px;
+	border-radius: 23px;
+	font-family: "Montserrat-Bold";
+	cursor: pointer;
+}
+.oplata-delivery-main{
+	background-color: #E3ECF5;
+	width: 100%;
+	z-index: 5;
+	position: relative;
+	
+}
+.oplata-delivery-main h1{
+	text-align: center;
+	color: #F7D22D;
+	padding-top: 50px;
+	font-family: "Montserrat-Bold";
+}
+.component{
+	width: 1300px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+}
+.maps{
+	text-align: center;
+	margin-top: 30px;
+	border-radius: 25px;
+	padding-bottom: 60px;
+}
+
+/* Подвал */
+footer{
+	font-family: "Montserrat-Bold";
+	width: 1300px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.footer-logo{
+	display: flex;
+	
+}
+.footer-logo h1{
+	margin-top: 30px;
+	margin-left: 10px;
+	font-family: "Montserrat-Bold";
+	font-size: 20px;
+}
+.footer-logo h2{
+	font-family: "Montserrat-Bold";
+	font-size: 20px;
+	margin-top: -3px;
+	margin-left: 10px;
+	color: #F7D22D;
+}
+.footer-logo img{
+	width: 65px;
+	height: 75px;
+}
+.footer-main-info{
+	display: flex;
+	justify-content: space-between;
+}
+.footer-text{
+	margin-top: 10px;
+	width: 550px;
+	height: 170px;
+}
+.footer-text a{
+	text-transform: none;
+	margin: 0;
+	font-size: 18px;
+	color:rgba(0, 0, 0, 0.7)
+}
+.footer-text b{
+	margin-right: 40px;
+	
+}
+.footer-text h1{
+	font-size: 18px;
+	
+}
+.footer-text h2{
+	font-size: 14px;
+}
+.social-link{
+	margin-top: 20px;
+	margin-right: 40px;
+	width: 300px;
+}
+.social-link-1{
+	margin-right: 50px;
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+.kalorijnost-i-sostav{
+	margin-bottom: 30px;
+}
+.footer-social h1{
+	text-transform: uppercase;
+	font-size: 18px;
+}
+.rectangle{
+	display: flex;
+	justify-content: space-between;
+}
+.rectangle-social{
+	margin-top: 10px;
+	width: 101px;
+	height: 52px;
+	border: 2px solid #E3ECF5;
+	border-radius: 13px;
+	text-align: center;
+	cursor: pointer;
+	padding-top: 9px;
+	transition: all .4s ease;
+}
+.rectangle-social:hover{
+	transform: scale(1.05);
+}
+.rectangle-text{
+	margin-top: 10px;
+	width: 228px;
+	height: 52px;
+	border: 2px solid #E3ECF5;
+	border-radius: 13px;
+	text-align: center;
+	padding-top: 15px;
+}
+.footer-copyright{
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+	color:rgba(0, 0, 0, 0.7);
+	padding-bottom: 30px;
+}
+.rights h1{
+	font-size: 14px;
+	margin-left: -10px;
+	width: 400px;
+	margin-top: 15px;
+}
+.visa{
+	width: 400px;
+	text-align: center;
+}
+.zvonok-footer{
+	width: 500px;
+	text-align: right;
+}
+/* Страница контакты */
+.contacts-main{
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 70px;
+	font-family: "Montserrat-Bold";
+	margin-bottom: 70px;
+
+}
+.contacts-main h1{
+	color:#F7D22D;
+	margin-bottom: 25px;
+	margin-top: -40px;
+}
+.contacts-main h2{
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+.contacts-main h3{
+	font-size: 14px;
+}
+/* Меню */
+.main-menu{
+	width: 1300px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+}
+.main-menu-h1{
+	font-family: "Montserrat-Bold";
+	color:#F7D22D;
+	letter-spacing: 2px;
+	margin-top: -70px;
+}
+.menu-group{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+.menu-card{
+	width: 300px;
+	height: 480px;
+}
+.menu-card-text{
+	margin-top: 10px;
+	padding-left: 15px;
+}
+.menu-card-text h1{
+	color: #797979;
+	font-size: 28px;
+	font-family: "Montserrat-Bold";
+	text-align-last: left;
+}
+.menu-card-text h2{
+	color: #797979;
+	font-size: 14px;
+	font-family: "Montserrat-Light";
+	margin-top: 20px;
+	width: 100%;
+	height: 100px;
+	
+}
+.price{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+	color: #797979;
+}
+.price h1{
+	font-size: 28px;	
+}
+.menu-price-btn{
+	width: 126px;
+	height: 38px;
+	border: none;
+	background-color: #F7D22D;
+	border-radius: 8px;
+	font-family: "Montserrat-Bold";
+	font-size: 16px;
+	color: #fff;
+	cursor: pointer;
+}
+.menu-card-img{
+	text-align: center;
+}
+.menu-card-img img{
+	width: 253px;
+	height: 253px;
+}
+.women-with-pizza-menu{
+	position: absolute;
+	top: 1370px;
+	right: 0;
+	z-index: 1;
+}
+.man-with-pizza-order{
+	position: absolute;
+	top: 200px;
+	left: 0;
+	z-index: 1;
+}
+.women-with-pizza-order{
+	position: absolute;
+	top: 550px;
+	right: 0;
+	z-index: 1;
+}
+.women-with-pizza-promo{
+	position: absolute;
+	top: 1000px;
+	right: 0;
+	z-index: 1;
+}
+/* Акции */
+.promotion-main{
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+.promotion-main-h1{
+	color: #F7D22D;
+	letter-spacing: 2px;
+	font-family: "Montserrat-Bold";
+}
+.promo-group{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 25px;
+}
+.promo-card-img img{
+	width: 100%;
+	margin-top: -10px;
+}
+.promo-card{
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	width: 400px;
+	height: 400px;
+	margin-top: 30px;
+	border-radius: 8px;
+}
+.promo-text{
+	margin-top: 7px;
+	padding: 0 15px;
+	width: 100%;
+	height: 175px;
+}
+.promo-btn{
+	font-family: "Montserrat-Bold";
+	width: 160px;
+	height: 45px;
+	background-color: #F7D22D;
+	color: #000;
+	border: none;
+	border-radius: 6px;
+	margin: 0 15px;
+	cursor: pointer;
+}
+.promo-text h1{
+	font-size: 26px;
+	font-family: "Montserrat-Bold";
+	margin-top: 4px;
+}
+.promo-text h2{
+	font-size: 14px;
+	margin-top: 10px;
+	font-family: "Montserrat-Light";
+	color: #797979;
+}
+/* Личный кабинет */
+.profile-bonus{
+	width: 100%;
+	height: 550px;
+	background-color: #E3ECF5;
+	margin-top: 70px;
+}
+.bonus{
+	padding-top: 30px;
+	width: 1300px;
+	margin: 0 auto;
+}
+.bonus h1{
+	color: #F7D22D;
+	font-family: "Montserrat-Bold";
+}
+.bonus a{
+	color: #F7D22D;
+	font-family: "Montserrat-SemiBold";
+	font-size: 14px;
+	text-transform: none;
+	text-decoration: underline;
+	text-decoration-style: dashed;	
+}
+.bonus-wrap{
+	display: flex;
+	justify-content: space-between;	
+}
+.bonus-card{
+	width: 255px;
+	height: 340px;
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	margin-top: 25px;
+	border-radius: 8px;
+}
+.bonus-card-img{
+	padding-top: 50px;
+}
+.bonus-card-img img{
+	 margin: 0 auto;
+	 display: block;
+}
+.bonus-card p{
+	color: #686466;
+	text-align: center;
+	padding-top: 35px;
+	font-size: 14px;
+	font-family: "Montserrat-SemiBold";
+}
+.profile{
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.profile h1{
+	color: #F7D22D;
+	font-family: "Montserrat-Bold";
+}
+.personal-data{
+	margin-top: 30px;
+	width: 450px;
+	height: 600px;
+	margin-bottom: 120px;
+}
+.personal-data {
+	font-size: 20px;
+	font-family: "Montserrat-SemiBold";
+
+}
+.personal-data-input{
+	width: 350px;
+	outline: none;
+	border: 2px solid #E3ECF5;
+	height: 40px;
+	margin-top: 10px;
+	font-size: 20px;
+	padding: 10px 0;
+	border-radius: 8px;
+	outline: none;
+	background-color: #F1F2F5;
+	padding-left: 7px;
+	font-size: 19px;	
+	font-family: "Montserrat-SemiBold";
+}
+.btn-profile-change{
+	border: none;
+	background-color: inherit;
+	position: absolute;
+	margin-left: -85px;
+	margin-top: 22px;
+	font-family: "Montserrat-SemiBold";
+	font-size: 13px;
+	cursor: pointer;
+}
+.label-profile{
+	margin-bottom: 40px;
+}
+.podpiska{
+	margin-top: 50px;
+}
+.podpiska h1{
+	font-size: 30px;
+}
+.checkboxes__item {
+	padding-top: 15px;
+	width: 50%;
+ }
+ .checkboxes {
+	max-width: 700px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+ }
+.checkbox.style-c {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox.style-c input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark {
+  background-color: #f7cb15;
+}
+.checkbox.style-c input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+}
+.checkbox.style-c:hover input ~ .checkbox__checkmark {
+  border: solid 1px #000;
+}
+.checkbox.style-c:hover input:checked ~ .checkbox__checkmark {
+  background-color: #f7cb15;
+}
+.checkbox.style-c .checkbox__checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  transition: background-color 0.25s ease;
+  border-radius: 4px;
+}
+.checkbox.style-c .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.checkbox.style-c .checkbox__body {
+  color: #333;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+
+.checkbox__body p{
+	margin-top: -2px;
+}
+.checkboxes__item-2 {
+	width: 50%;
+	padding-left: 20px;
+ }
+.checkbox.style-d {
+	display: inline-block;
+	position: relative;
+	padding-left: 30px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+ }
+ .checkbox.style-d input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+ }
+ .checkbox.style-d input:checked ~ .checkbox__checkmark {
+	background-color: #FF2E65;
+ }
+ .checkbox.style-d input:checked ~ .checkbox__checkmark:after {
+	opacity: 1;
+ }
+ .checkbox.style-d:hover input ~ .checkbox__checkmark {
+	background-color: #eee;
+ }
+ .checkbox.style-d:hover input:checked ~ .checkbox__checkmark {
+	background-color: #FF2E65;
+ }
+ .checkbox.style-d .checkbox__checkmark {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background-color: #eee;
+	transition: background-color 0.25s ease;
+	border-radius: 4px;
+ }
+ .checkbox.style-d .checkbox__checkmark:after {
+	content: "";
+	position: absolute;
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid #333;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	opacity: 0;
+	transition: opacity 0.25s ease;
+ }
+ .checkbox.style-d .checkbox__body {
+	color: #333;
+	line-height: 1.4;
+	font-size: 16px;
+ }
+.checkbox__body{
+	width: 500px;
+}
+.checkbox__body p{
+	font-size: 14px;
+	padding-top: 4px;
+}
+.profile-exit-btn{
+	margin-top: 60px;
+	width: 135px;
+	height: 48px;
+	border-radius: 8px;
+	font-size: 18px;
+	background-color: #E3ECF5;
+	color: #696F7A;
+	border: none;
+	font-family: "Montserrat-SemiBold";
+	cursor: pointer;
+}
+/* Заказ на доставку */
+.delivery-order-h1{
+	width: 1300px;
+	margin: 0 auto;
+	font-family: "Montserrat-Bold";
+	margin-top: 70px;
+	color: #F7D22D;
+}
+.delivery-order{
+	width: 1300px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+.order-info{
+	margin-top: 30px;
+}
+.label-order{
+	display: flex;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.label-order p{
+	padding-top: 20px;
+	width: 180px;
+	height: 30px;
+}
+.order-input{
+	width: 600px;
+	outline: none;
+	border: 2px solid #E3ECF5;
+	height: 40px;
+	margin-top: 10px;
+	
+	font-size: 20px;
+	padding: 10px 0;
+	border-radius: 8px;
+	outline: none;
+	background-color: #F1F2F5;
+	padding-left: 14px;
+	font-size: 19px;	
+	font-family: "Montserrat-SemiBold";
+}
+.btn-order-change{
+	border: none;
+	background-color: inherit;
+	position: absolute;
+	margin-left: 690px;
+	margin-top: 21px;
+	font-family: "Montserrat-Bold";
+	font-size: 14px;
+	cursor: pointer;
+	color: #F7D22D;
+}
+.promocode{
+	margin-top: 70px;
+}
+.promocode-input{
+	width: 240px;
+	outline: none;
+	border: 2px solid #E3ECF5;
+	height: 40px;
+	margin-top: 10px;
+	padding: 10px 0;
+	border-radius: 8px;
+	outline: none;
+	background-color: #F1F2F5;
+	padding-left: 5px;
+	font-size: 14px;	
+	font-family: "Montserrat-SemiBold";
+}
+.btn-order-submit{
+	border: none;
+	background-color: #F7D22D;
+	font-family: "Montserrat-Bold";
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: 15px;
+	cursor: pointer;
+	color: #fff;
+	width: 140px;
+	height: 42px;
+	border-radius: 8px;
+}
+.promocode-cart{
+	margin-top: 30px;
+	width: 1300px;
+}
+.promocode h1{
+	color: #F7D22D;
+	font-size: 26px;
+	font-family: "Montserrat-Bold";
+}
+.sostav{
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	width: 350px;
+	height: 500px;
+	border-radius: 8px;
+}
+.promo-cart-price{
+	display: flex;
+	justify-content: space-between;
+}
+.sostav h1{
+	color: #F7D22D;
+	font-size: 20px;
+	padding-top: 40px;
+	font-family: "Montserrat-Bold";
+	padding-left: 20px;
+}
+.sostav-position{
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 20px;
+	font-size: 16px;
+}
+.sostav-position img{
+	width: 12px;
+	height: 12px;
+	cursor: pointer;
+	margin-top: 3px;
+}
+.zakaz-price{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 20px;
+	margin-top: 60px;
+
+}
+.sostav h3{
+	text-align: center;
+	margin-top: 40px;	
+	font-size: 14px;
+	color: #7c7b7b;
+	font-family: "Montserrat-Bold";
+}
+.zakaz-price h2{
+	color: #7c7b7b;
+	font-size: 16px;
+}
+.payment-wethod-wrap{
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 100px;
+	
+}
+.payment-wethod{
+	width: 750px;
+	height: 250px;
+	background-color: #F1F2F5;
+	border-radius: 8px;
+	padding-left: 40px;
+}
+
+.payment-wethod h1{
+	padding-top: 30px;
+	color: #FF2E65;
+	font-size: 24px;
+	font-family: "Montserrat-Bold";
+	margin-bottom: 20px;
+}
+.form_radio{
+	margin-top: 10px;
+}
+
+.payment-wethod p{
+	color: #213134;
+	font-family: "Montserrat-SemiBold";
+	font-size: 16px;
+}
+.payment-wethod h2{
+	color: #213134;
+	font-family: "Montserrat-SemiBold";
+	font-size: 14px;
+}
+.sdacha{
+	display: flex;
+	width: 1000px;
+	padding-top: 30px;
+}
+.sdacha-text{
+	margin-left: 10px;
+	border:  1px solid #E2E2E9;
+	width: 120px;
+	height: 35px;
+	font-family: "Montserrat-Bold";
+	margin-top: -7px;
+	outline: none;
+	border-radius: 8px;
+	background-color: #fff;
+	font-size: 18px;
+	padding-left: 10px;
+}
+.oformlenie-wrap{
+	width: 1300px;
+	margin: 0 auto;
+	height: 20px;
+	margin-top: 40px;
+	padding: 0 10px;
+	margin-bottom: 80px;
+}
+.oformlenie-cart{
+	width: 1300px;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;	
+}
+.oformlenie{
+	width: 750px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+.oformlenie-back{
+	display: flex;
+	cursor: pointer;
+}
+.oformlenie-back img{
+	width: 10px;
+	height: 10px;
+	margin-top: 5px;
+}
+.oformlenie-back p{
+	padding-left: 6px;
+	font-family: "Montserrat-SemiBold";
+	color: #213134;
+	font-size: 16px;
+}
+.btn-next-oformlenie{
+	font-family: "Montserrat-SemiBold";
+	color: #000;
+	font-size: 16px;
+	text-align: center;
+	text-transform: none;
+	cursor: pointer;
+	background-color: #F7D22D;
+	border-radius: 8px;
+	width: 180px;
+	height: 40px;
+	border: none;
+	margin-top: -7px;
+}
+.delivery-time-main{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 15px;
+}
+
+.delivery-time{
+	width: 220px;
+	height: 45px;
+	background-color: #fff;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	text-align: center;
+	vertical-align: 10px;
+	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+}
+.delivery-time p{
+	padding-top: 13px;
+	color: #213134;
+	font-family: "Montserrat-Bold";
+
+}
+.delivery-time:active{
+	border:  2px solid #F7D22D;
+}
+/* Корзина */
+.cart-main{
+	width: 1300px;
+	margin: 0 auto;
+	margin-top: 60px;
+}
+.korzina{
+	margin-bottom: 30px;
+}
+.korzina h1{
+	color: #F7D22D;
+	font-family: "Montserrat-Bold";
+	border-bottom: 2px solid #ECECF1;
+	padding-bottom: 40px;
+}
+
+.korzina-position{
+	height: 140px;
+	width: 1300px;
+	border-bottom: 2px solid #ECECF1;
+	padding-top: 25px;
+	padding-left: 40px;
+	display: flex;
+}
+.korzina-position-img img{
+	width: 93px;
+	height: 93px;
+}
+.korzina-position-text{
+	width: 650px;
+	padding-left: 40px;
+	margin-right: 180px;
+}
+.korzina-position-text h2{
+	font-family: "Montserrat-Bold";
+
+}
+.korzina-position-text h3{
+	font-family: "Montserrat-Light";
+	color: #686466;
+	font-size: 16px;
+	padding-top: 5px;
+}
+.korzina-position-close img{
+	float: right;
+	cursor: pointer;
+	padding-top: 30px;
+}
+.promo-cart{
+	width: 1300px;
+	display: flex;
+}
+.prize-zakaza{
+	margin-left: 30px;
+	padding-top: 15px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 390px;
+}
+.prize-zakaza h2{
+	padding-left: 20px;
+	padding-top: 3px;
+}
+.counter {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-column-gap: 7px;
+			  column-gap: 7px;
+	-webkit-box-align: center;
+		 -ms-flex-align: center;
+			  align-items: center;
+	-webkit-user-select: none;
+		-moz-user-select: none;
+		 -ms-user-select: none;
+			  user-select: none;
+			  padding-top: 30px;
+ }
+ 
+ .counter__button {
+	-webkit-box-flex: 0;
+		 -ms-flex: 0 0 30px;
+			  flex: 0 0 30px;
+	height: 30px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+		 -ms-flex-pack: center;
+			  justify-content: center;
+	-webkit-box-align: center;
+		 -ms-flex-align: center;
+			  align-items: center;
+	cursor: pointer;
+ }
+ 
+ .counter__button_minus.disabled {
+	border: 1px solid #c4c4c4;
+	color: #c4c4c4;
+	cursor: default;
+ }
+ 
+ .counter__input {
+	-webkit-box-flex: 0;
+		 -ms-flex: 0 0 30px;
+			  flex: 0 0 30px;
+ }
+ 
+ .counter__input input {
+	width: 100%;
+	border: none;
+	font-size: 20px;
+	text-align: center;
+	background-color: inherit;
+ }

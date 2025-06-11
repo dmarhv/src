@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="icon" href="assets/image/logotype.png" type="image/x-icon">
+	<title>Restaurant</title>
+</head>
+<body>
+	<!-- Меню сайта -->
+	<header>
+		<div class="header">
+			<div class="head">
+				<div class="logotype">
+					<img src="assets/image/logotype.png" alt="">
+				</div>
+				<div class="restoran">
+					<H2>Ресторан<b class="rzn-menu-txt">Рязань</b></H2>
+					<img src="assets/image/yandex-eda.png" alt=""><b class="restoran-txt"> Яндекс Еда</b> <img src="assets/image/Ellipse.png" alt="">
+					<b class="restoran-txt">4.7</b> <img src="assets/image/star.png" alt=""><b class="restoran-txt">    Время доставки</b> <img src="assets/image/Ellipse.png" alt=""><b class="restoran-txt"> от 30 мин</b>
+				</div>
+				<div class="zvonok">
+					<a href="#" ><button class="zakaz-zvonok" id="open-zvonok">Заказать звонок</button></a> <b class="phone-menu">8 499 391-84-49</b>
+				</div>
+			</div>
+			<div class="menu">
+				<div class="main-nav">	
+					<a href="index.html" class="menu-link">Главная</a>
+					<a href="menu.html" class="menu-link">Меню</a>
+					<a href="contacts.html" class="menu-link">Контакты</a>
+					<a href="delivery.html" class="menu-link">Доставка</a>
+					<a href="promotion.html" class="sale-link">Акции</a>
+				</div>
+				<div class="profile-menu">
+					<a href="#" id="open-reg" class="profile-link">Регистрация</a>
+					<a href="#" id="open-auth" class="profile-link">Вход</a>
+				</div>
+				
+			</div>
+		</div>
+	</header>
+	<!-- Заказ звонка -->
+	<div class="zvonok-modal" id="zvonok-form">
+		<div class="modal-box">
+			<button class="modal-close" id="close-modal-btn"><img src="assets/image/close.svg" alt=""></button>
+			<h2>Заказ звонка</h2>
+			<div class="zvonok-modal-form">
+				<div class="user-box">
+					<input type="text" name="" id="" class="zvonok-input-txt">
+					<label class="label-form">Телефон</label>
+				</div>
+				<p>Оставьте свой Телефон и с вами обязательно свяжутся.</p>
+			</div>
+				
+				<button class="btn-to-profile">Заказать</button>
+			</form>
+		</div>
+	</div>
+	<!-- Окно регистрации -->
+	<div class="reg-modal" id="reg-form">
+		<div class="modal-box">
+			<button class="modal-close" id="close-modal-btn-2"><img src="assets/image/close.svg" alt=""></button>
+			<h2>Регистрация</h2>
+			<form action="" class="form-reg">
+				<div class="user-box">
+					<input type="text" name="" id="" class="input-txt">
+					<label class="label-form">Логин</label>
+				</div>
+				<div class="user-box">
+					<input type="text" name="" id="" class="input-txt">
+					<label class="label-form">Телефон</label>
+				</div>
+				<div class="user-box">
+					<input type="text" name="" id="" class="input-txt">
+					<label class="label-form">Почта</label>
+				</div>
+				<div class="user-box">
+					<input type="password" name="" id="" class="input-txt">
+					<label class="label-form">Пароль</label>
+				</div>
+				<div class="user-box">
+					<input type="password" name="" id="" class="input-txt">
+					<label class="label-form">Повтор пароля</label>
+				</div>
+				<button class="btn-to-profile">Регистрация</button>
+			</form>
+		</div>
+	</div>
+	<!-- Окно авторизации -->
+	<div class="auth-modal" id="auth-form">
+		<div class="modal-box">
+			<button class="modal-close" id="close-modal-btn-1"><img src="assets/image/close.svg" alt=""></button>
+			<h2>Авторизация</h2>
+			<form action="" class="form-auth">
+				<div class="user-box">
+					<input type="text" name="" id="" class="input-txt">
+					<label class="label-form">Логин</label>
+				</div>
+				<div class="user-box">
+					<input type="text" name="" id="" class="input-txt">
+					<label class="label-form">Пароль</label>
+				</div>
+				<button class="btn-to-profile">Вход</button>
+			</form>
+		</div>
+	</div>
+	<img class="women-with-pizza-order wow fadeIn" src="assets/image/women-2.png" alt="">
+	<img class="man-with-pizza-order wow fadeIn" src="assets/image/man.png" alt="">
+
+	<!-- Основная информация -->
+		<h1 class="delivery-order-h1 wow zoomIn">Оформление доставки</h1>
+		<div class="delivery-order wow zoomIn">
+			<div class="order-info">
+				<div class="label-order">
+					<p>Имя</p>
+					<input type="text" name="" placeholder="Дмитрий" readonly id="input-name-order" class="order-input">
+				</div>
+				<div class="label-order">
+					<p>Номер телефона</p>
+					<input type="tel" name="" placeholder="+7 999 999-99-99" readonly id="input-name-order" class="order-input">
+				</div>
+				<div class="label-order">
+					<p>Адрес доставки</p>
+					<input type="text" name="" placeholder="ул.Ленина 12 б" readonly id="input-name-order" class="order-input">
+					<button onclick="button1Click()" class="btn-order-change">Изменить</button>
+				</div>
+				<div class="label-order">
+					<p>Время доставки</p>
+					<input type="text" name="" placeholder="Побыстрее" readonly id="input-name-order" class="order-input">
+					<button class="btn-order-change" id="open-time">Изменить</button>
+				</div>
+				<div class="promocode">
+					<h1>Промокод</h1>
+					<div class="label-order">
+						<input type="text" name="" placeholder="Введите Промокод"  id="input-name-order" class="promocode-input">
+						<button onclick="button1Click()" class="btn-order-submit">Применить</button>
+					</div>
+				</div>
+				<!-- Окно время доставки -->
+			<div class="time-modal" id="time-form">
+				<div class="modal-box-time">
+					<button class="modal-close" id="close-modal-btn-3"><img src="assets/image/close.svg" alt=""></button>
+					<h2>Время доставки</h2>
+					<div class="delivery-time-main">
+						<div class="delivery-time-wrap">
+							<div class="delivery-time"><p>Побыстрее</p></div>
+							<div class="delivery-time"><p>11:00 - 12:00</p></div>
+							<div class="delivery-time"><p>12:00 - 13:00</p></div>
+							<div class="delivery-time"><p>13:00 - 14:00</p></div>
+							<div class="delivery-time"><p>14:00 - 15:00</p></div>
+						</div>
+						<div class="delivery-time-wrap">
+							<div class="delivery-time"><p>15:00 - 16:00</p></div>
+							<div class="delivery-time"><p>16:00 - 17:00</p></div>
+							<div class="delivery-time"><p>17:00 - 18:00</p></div>
+							<div class="delivery-time"><p>18:00 - 19:00</p></div>
+							<div class="delivery-time"><p>19:00 - 20:00</p></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="sostav wow zoomIn">
+				<h1>Состав заказа</h1>
+				<div class="sostav-position">
+					<p>Комбо за 599 ₽</p>
+					<p>599 ₽</p>
+					<img src="assets/image/close.svg" alt="">
+				</div>
+				<div class="sostav-position">
+					<p>Комбо за 599 ₽</p>
+					<p>599 ₽</p>
+					<img src="assets/image/close.svg" alt="">
+				</div>
+				<div class="sostav-position">
+					<p>Комбо за 599 ₽</p>
+					<p>599 ₽</p>
+					<img src="assets/image/close.svg" alt="">
+				</div>
+				<div class="sostav-position">
+					<p>Комбо за 599 ₽</p>
+					<p>599 ₽</p>
+					<img src="assets/image/close.svg" alt="">
+				</div>
+				<div class="zakaz-price">
+					<h2>Сумма заказа</h2>
+					<p>2 396 ₽</p>
+				</div>
+				<h3>Бесплатная доставка</h3>
+			</div>
+		</div>
+		<div class="payment-wethod-wrap wow fadeIn">
+			<div class="payment-wethod">
+				<h1>Способы оплаты</h1>
+				<div class="checkboxes__item">
+					<label class="checkbox style-c">
+					  <input type="checkbox" checked="checked"/>
+					  <div class="checkbox__checkmark"></div>
+					  <div class="checkbox__body"><p> Картой на сайте.</p></div>
+					</label>
+				 </div>
+				 <div class="checkboxes__item">
+					<label class="checkbox style-c">
+					  <input type="checkbox" checked="checked"/>
+					  <div class="checkbox__checkmark"></div>
+					  <div class="checkbox__body"><p>Наличными курьеру.</p></div>
+					</label>
+				</div>
+				<div class="sdacha">
+					<h2>С какой суммы подготовить сдачу?</h2>	
+					<input type="text" name="" id="" class="sdacha-text">
+					<div class="checkboxes__item-2">
+						<label class="checkbox style-d">
+						  <input type="checkbox" checked="checked"/>
+						  <div class="checkbox__checkmark"></div>
+						  <div class="checkbox__body"><p>Без сдачи</p></div>
+						</label>
+					 </div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="oformlenie-wrap wow fadeIn">
+			<div class="oformlenie">
+				<div class="oformlenie-back">
+					<img src="assets/image/back.png" alt=""><p>Назад в корзину</p>
+				</div>
+				<div class="oformlenie-next">
+					<a href="#"><button class="btn-next-oformlenie">Оформить заказ</button></a>
+				</div>
+			</div>
+		</div>
+	<!-- Подвал -->
+	<footer>
+		<div class="footer-logo">
+			<div>
+				<img src="assets/image/logotype.png" alt="">
+			</div>
+			<div>
+				<h1>Ресторан</h1><h2>Рязань</h2>
+			</div>
+		</div>
+		<div class="footer-main-info">
+			<div class="footer-text">
+				<div class="kalorijnost-i-sostav">
+				<a href="#"><b>Калорийность и состав </b></a>
+				<a href="#"><b> Правовая информация</b></a>
+				</div>
+				<a href="#"><b> Мы в соцсетях</b></a>
+				<br>
+				<div class="social-link">
+				<div class="social-link-1">
+					<a href="#">YouTube</a>
+					<a href="#">Facebook</a>
+				</div>
+				<div class="social-link-1">
+					<a href="#">instagram</a>
+					<a href="#">Twitter</a>
+				</div>
+			</div>
+			</div>
+			<div class="footer-social">
+				<h1>Остались вопросы? А мы всегда на связи:</h1>
+				<div class="rectangle">
+					<div class="rectangle-social"><img src="assets/image/social/facebook.png" alt=""></div>
+					<div class="rectangle-social"><img src="assets/image/social/viber.png" alt=""></div>
+					<div class="rectangle-social"><img src="assets/image/social/skype.png" alt=""></div>
+					<div class="rectangle-social"><img src="assets/image/social/telegram.png" alt=""></div>
+				</div>
+				<div class="rectangle">
+					<div class="rectangle-social"><img src="assets/image/social/whatsapp.png" alt=""></div>
+					<div class="rectangle-social"><img src="assets/image/social/vk.png" alt=""></div>
+					<div class="rectangle-text">Написать нам</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="rights">
+				<h1>© Copyright 2023, Все права защищены</h1>
+			</div>
+			<div class="visa">
+				<img src="assets/image/social/visa.png" alt="">
+				<img src="assets/image/social/paypal.png" alt="">
+				<img src="assets/image/social/mastercard.png" alt="">
+			</div>
+			<div class="zvonok-footer">
+				<a href="#"><button class="zakaz-zvonok">Заказать звонок</button></a>
+				<b class="phone-menu">8 499 391-84-49</b>
+			</div>
+		</div>
+	</footer>
+	<script src="assets/js/profile.js"></script>
+		<script src="assets/js/wow.min.js"></script>
+		<script>
+		new WOW().init();
+		</script>
+</body>
+</html>

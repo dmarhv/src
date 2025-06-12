@@ -32,15 +32,15 @@ body{
 }
 
 /* Шапка сайта */
-header{
-	width: 100%;
-	height: 100px;
-	padding-top: 10px;
+header {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
 }
-.header{
-	width: 1300px;
-	height: 80px;
-	margin: 0 auto;
+.header {
+    width: 1300px;
+    height: 80px;
+    margin: 0 auto;
 }
 .head{
 	display: flex;
@@ -68,7 +68,7 @@ header{
 	top: 400px;
 }
 .rzn-menu-txt{
-	color: #F7D22D;
+	color: #f0d14d;
 	margin-left: 10px;
 }
 .restoran-txt{
@@ -110,6 +110,7 @@ header{
 .menu-link{
 	margin-right: 15px;
 }
+
 .profile-link{
 	color: #696F7A;
 	font-family: "Montserrat-Bold";
@@ -678,16 +679,17 @@ footer{
 	font-size: 14px;
 }
 /* Меню */
-.main-menu{
-	width: 1300px;
-	margin: 0 auto;
-	margin-bottom: 100px;
+.main-menu {
+    width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding-top: 50px;
 }
 .main-menu-h1{
 	font-family: "Montserrat-Bold";
 	color:#F7D22D;
 	letter-spacing: 2px;
-	margin-top: -70px;
+	margin-top: 0;
 }
 .menu-group{
 	display: flex;

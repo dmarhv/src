@@ -427,9 +427,57 @@
 		</div>
 	</footer>
 	<script src="assets/js/profile.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-		<script>
+	<script src="assets/js/wow.min.js"></script>
+	<script>
 		new WOW().init();
-		</script>
+		
+		// Каунтер для кнопки заказать
+		document.querySelectorAll('.menu-price-btn').forEach(button => {
+			let clickCount = 0;
+			
+			const counterHTML = `
+				<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 5px;">
+					<span style="cursor: pointer; font-size: 24px; font-weight: bold; line-height: 1;">-</span>
+					<span style="min-width: 20px; text-align: center; font-size: 20px; font-weight: bold;">1</span>
+					<span style="cursor: pointer; font-size: 24px; font-weight: bold; line-height: 1;">+</span>
+				</div>
+			`;
+			
+			button.addEventListener('click', function(e) {
+				if (clickCount === 0) {
+					this.innerHTML = counterHTML;
+					this.style.backgroundColor = '#4e4f52';
+					this.style.transition = 'background-color 0.3s ease';
+					this.style.padding = '5px 10px';
+					this.style.minWidth = '120px';
+					
+					const minusBtn = this.querySelector('span:first-child');
+					const numberSpan = this.querySelector('span:nth-child(2)');
+					const plusBtn = this.querySelector('span:last-child');
+					
+					minusBtn.addEventListener('click', (e) => {
+						e.stopPropagation();
+						if (clickCount > 0) {
+							clickCount--;
+							numberSpan.textContent = clickCount;
+							if (clickCount === 0) {
+								this.innerHTML = 'Заказать';
+								this.style.backgroundColor = '';
+								this.style.minWidth = '';
+								this.style.padding = '';
+								clickCount = 0;
+							}
+						}
+					});
+					
+					plusBtn.addEventListener('click', (e) => {
+						e.stopPropagation();
+						clickCount++;
+						numberSpan.textContent = clickCount;
+					});
+				}
+			});
+		});
+	</script>
 </body>
 </html>

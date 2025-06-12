@@ -569,11 +569,11 @@ body .progress_inner input[type="radio"] {
 	display: none;
 }
 .progress{
-	height: 600px;
+	height: 650px;
 }
 .women-with-pizza-delivery{
 	position: absolute;
-	top: 370px;
+		top: 170px;
 	right: 0;
 	z-index: 1;
 }

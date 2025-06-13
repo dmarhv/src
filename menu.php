@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-require_once 'db_menu.php';
+require_once 'db_restaurant.php';
 
 // Получаем все блюда из базы данных
 $query = "SELECT * FROM restaurant_menu ORDER BY id";

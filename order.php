@@ -277,26 +277,53 @@
 						return;
 					}
 					
-					// Здесь можно добавить валидацию формы
+					// Получаем данные формы
 					const name = document.getElementById('input-name-order').value;
 					const email = document.getElementById('input-email-order').value;
 					const address = document.querySelector('input[placeholder="Введите адрес"]').value;
+					const deliveryTime = document.querySelector('input[placeholder="Побыстрее"]').value;
+					const paymentMethod = document.querySelector('input[name="payment_method"]:checked').value;
 					
-					if (!name || !email || !address) {
+					if (!name || !email || !address || !deliveryTime) {
 						alert('Пожалуйста, заполните все обязательные поля!');
 						return;
 					}
 					
-					// Показываем сообщение об успешном заказе
-					alert('Заказ успешно оформлен! Спасибо за заказ. Пожалуйста, подтвердите заказ на почте.');
-					
-					// Очищаем корзину
-					Cart.clearCart();
-					
-					// Очищаем форму
-					document.getElementById('input-name-order').value = '';
-					document.getElementById('input-email-order').value = '';
-					document.querySelector('input[placeholder="Введите адрес"]').value = '';
+					// Отправляем данные на сервер
+					fetch('process_order.php', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify({
+							name: name,
+							email: email,
+							address: address,
+							delivery_time: deliveryTime,
+							payment_method: paymentMethod
+						})
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (data.success) {
+							alert('Заказ успешно оформлен! Спасибо за заказ. Пожалуйста, подтвердите заказ на почте.');
+							
+							// Очищаем корзину
+							Cart.clearCart();
+							
+							// Очищаем форму
+							document.getElementById('input-name-order').value = '';
+							document.getElementById('input-email-order').value = '';
+							document.querySelector('input[placeholder="Введите адрес"]').value = '';
+							document.querySelector('input[placeholder="Побыстрее"]').value = 'Побыстрее';
+						} else {
+							alert('Ошибка при сохранении заказа: ' + data.message);
+						}
+					})
+					.catch(error => {
+						console.error('Error:', error);
+						alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте позже.');
+					});
 				});
 			}
 			

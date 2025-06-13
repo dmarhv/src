@@ -11,7 +11,9 @@
 	<title>Restaurant</title>
 </head>
 <body>
+	<!-- Шапка -->
 <?php require_once 'header.php'; ?>
+
 	<!-- Основная информация -->
 	<div class='progress wow fadeIn'>
 		<div class='progress_inner'>
@@ -77,10 +79,11 @@
 	  
 	  <!-- Подвал -->
 	<?php require_once 'footer.php'; ?>
-	<script src="assets/js/profile.js"></script>
+	
+	<!-- Скрипты -->
+	<script src="assets/js/cart.js"></script>
+	<script src="assets/js/modals.js"></script>
+	<script src="assets/js/init.js"></script>
 	<script src="assets/js/wow.min.js"></script>
-	<script>
-	new WOW().init();
-	</script>
 </body>
 </html>

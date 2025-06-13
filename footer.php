@@ -1,4 +1,4 @@
-<!-- Подвал (footer) -->
+<!-- Подвал -->
 <footer>
     <div class="footer-logo">
         <div>
@@ -57,8 +57,8 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/profile.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script>
-new WOW().init();
-</script> 
+<!-- Подключение скриптов -->
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/modals.js"></script>
+<script src="assets/js/init.js"></script>
+<script src="assets/js/wow.min.js"></script> 

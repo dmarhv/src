@@ -10,7 +10,9 @@
 	<title>Restaurant</title>
 </head>
 <body>
+	<!-- Шапка -->
 <?php require_once 'header.php'; ?>
+
 	<!-- Новинки -->
 	<div class="new">
 		<div class="cards wow zoomIn">
@@ -110,16 +112,18 @@
 				<img src="assets/image/component-4.png" alt="">
 			</div>
 			<div class="maps">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2310.183458271023!2d39.727868880867284!3d54.618376035369856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1683220414917!5m2!1sru!2sru" width="1100" height="450" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A28ee983843297ca2f4f22fe181065608ed9bc0f7e2a15f2e4d2d4cbd3760e179&amp;source=constructor" width="1100" height="450" class="map-container" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 		</div>
 	</div>
+
 	<!-- Подвал -->
 	<?php require_once 'footer.php'; ?>
-	<script src="assets/js/profile.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-		<script>
-		new WOW().init();
-		</script>
+
+	<!-- Скрипты -->
+	<script src="assets/js/cart.js"></script>
+	<script src="assets/js/modals.js"></script>
+	<script src="assets/js/init.js"></script>
+	<script src="assets/js/wow.min.js"></script>
 </body>
 </html>

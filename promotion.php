@@ -10,7 +10,9 @@
 	<title>Restaurant</title>
 </head>
 <body>
+	<!-- Шапка -->
 <?php require_once 'header.php'; ?>
+
 	<!-- Акции -->
 	<div class="promotion-main">
 		<h1 class="promotion-main-h1">Акции</h1>
@@ -97,10 +99,11 @@
 	<img class="women-with-pizza-promo wow fadeIn" src="assets/image/women-2.png" alt="">
 	<!-- Подвал -->
 	<?php require_once 'footer.php'; ?>
-	<script src="assets/js/profile.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-		<script>
-		new WOW().init();
-		</script>
+
+	<!-- Скрипты -->
+	<script src="assets/js/cart.js"></script>
+	<script src="assets/js/modals.js"></script>
+	<script src="assets/js/init.js"></script>
+	<script src="assets/js/wow.min.js"></script>
 </body>
 </html>

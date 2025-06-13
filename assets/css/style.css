@@ -1194,14 +1194,16 @@ footer{
 .sostav h1{
 	color: #F7D22D;
 	font-size: 20px;
-	padding-top: 40px;
+	padding-top: 20px;
 	font-family: "Montserrat-Bold";
 	padding-left: 20px;
 }
 .sostav-position{
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 20px;
+	margin: 0 20px;
+	margin-top: 30px;
+
 	font-size: 16px;
 }
 .sostav-position img{
@@ -1214,12 +1216,12 @@ footer{
 	display: flex;
 	justify-content: space-between;
 	margin: 0 20px;
-	margin-top: 60px;
+	margin-top: 30px;
 
 }
 .sostav h3{
 	text-align: center;
-	margin-top: 40px;	
+	margin-top: 30px;
 	font-size: 14px;
 	color: #7c7b7b;
 	font-family: "Montserrat-Bold";
@@ -1231,15 +1233,14 @@ footer{
 .payment-wethod-wrap{
 	width: 1300px;
 	margin: 0 auto;
-	margin-top: 100px;
-	
+	margin-top: -120px;
 }
 .payment-wethod{
-	width: 750px;
+	width: 780px;
 	height: 250px;
 	background-color: #F1F2F5;
 	border-radius: 8px;
-	padding-left: 40px;
+	padding-left: 20px;
 }
 
 .payment-wethod h1{
@@ -1286,7 +1287,6 @@ footer{
 	margin: 0 auto;
 	height: 20px;
 	margin-top: 40px;
-	padding: 0 10px;
 	margin-bottom: 80px;
 }
 .oformlenie-cart{
@@ -1299,36 +1299,21 @@ footer{
 	width: 750px;
 	display: flex;
 	justify-content: space-between;
-	padding: 0 10px;
 }
-.oformlenie-back{
-	display: flex;
-	cursor: pointer;
-}
-.oformlenie-back img{
-	width: 10px;
-	height: 10px;
-	margin-top: 5px;
-}
-.oformlenie-back p{
-	padding-left: 6px;
-	font-family: "Montserrat-SemiBold";
-	color: #213134;
-	font-size: 16px;
-}
+
 .btn-next-oformlenie{
 	font-family: "Montserrat-SemiBold";
-	color: #000;
-	font-size: 16px;
+	color: #fff;
+	font-size: 20px;
 	text-align: center;
 	text-transform: none;
 	cursor: pointer;
 	background-color: #F7D22D;
 	border-radius: 8px;
-	width: 180px;
-	height: 40px;
+	width: 350px;
+	height: 50px;
 	border: none;
-	margin-top: -7px;
+	margin-left: 200px;
 }
 .delivery-time-main{
 	display: flex;
@@ -1347,6 +1332,12 @@ footer{
 	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
+
+}
+.delivery-time:hover{
+	transform: scale(1.05);
+	cursor: pointer;
+	border:  2px solid #F7D22D;
 }
 .delivery-time p{
 	padding-top: 13px;

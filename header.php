@@ -23,9 +23,10 @@
 				<a href="promotion.php" class="sale-link">Акции</a>
 			</div>
 			<div class="profile-menu">
-				<a href="#" id="open-reg" class="profile-link"> Регистрация</a>
-				<a href="#" id="open-auth" class="profile-link"> Вход</a>
-				<a href="order.php" class="profile-link"><i>Заказ</i></a>
+				<a href="order.php" class="profile-link">
+					<i>Заказ</i>
+					<span id="cart-indicator" style="background: #ff4444; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; margin-left: 5px; display: none;">0</span>
+				</a>
 				
 			</div>
 		</div>
@@ -39,7 +40,7 @@
 		<div class="zvonok-modal-form">
 			<div class="user-box">
 				<input type="" name="" id="" class="zvonok-input-txt">
-				<label class="label-form"> Телефон</label>
+				<label class="label-form">Телефон</label>
 			</div>
 			<p> Оставьте свой Телефон и с вами обязательно свяжутся.</p>
 		</div>
@@ -99,4 +100,36 @@
 <script src="assets/js/wow.min.js"></script>
 <script>
 	new WOW().init();
+	
+	// Функция для обновления индикатора корзины
+	function updateCartIndicator() {
+		const cartIndicator = document.getElementById('cart-indicator');
+		if (cartIndicator) {
+			const cart = localStorage.getItem('restaurantCart');
+			const cartData = cart ? JSON.parse(cart) : {};
+			const totalItems = Object.values(cartData).reduce((total, item) => total + item.quantity, 0);
+			
+			if (totalItems > 0) {
+				cartIndicator.textContent = totalItems;
+				cartIndicator.style.display = 'inline';
+			} else {
+				cartIndicator.style.display = 'none';
+			}
+		}
+	}
+	
+	// Обновляем индикатор при загрузке страницы
+	document.addEventListener('DOMContentLoaded', function() {
+		updateCartIndicator();
+	});
+	
+	// Обновляем индикатор при изменении localStorage
+	window.addEventListener('storage', function(e) {
+		if (e.key === 'restaurantCart') {
+			updateCartIndicator();
+		}
+	});
+	
+	// Обновляем индикатор каждые 2 секунды (для синхронизации между вкладками)
+	setInterval(updateCartIndicator, 2000);
 </script> 

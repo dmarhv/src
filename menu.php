@@ -61,6 +61,84 @@ foreach ($menu_items as $item) {
 	<script>
 		new WOW().init();
 		
+		// Функция для работы с корзиной
+		const Cart = {
+			// Получить корзину из localStorage
+			getCart() {
+				const cart = localStorage.getItem('restaurantCart');
+				return cart ? JSON.parse(cart) : {};
+			},
+			
+			// Сохранить корзину в localStorage
+			saveCart(cart) {
+				localStorage.setItem('restaurantCart', JSON.stringify(cart));
+			},
+			
+			// Добавить товар в корзину
+			addItem(itemId, name, price, quantity = 1) {
+				const cart = this.getCart();
+				if (cart[itemId]) {
+					cart[itemId].quantity += quantity;
+				} else {
+					cart[itemId] = {
+						id: itemId,
+						name: name,
+						price: price,
+						quantity: quantity
+					};
+				}
+				this.saveCart(cart);
+				this.updateCartDisplay();
+			},
+			
+			// Удалить товар из корзины
+			removeItem(itemId) {
+				const cart = this.getCart();
+				delete cart[itemId];
+				this.saveCart(cart);
+				this.updateCartDisplay();
+			},
+			
+			// Обновить количество товара
+			updateQuantity(itemId, quantity) {
+				const cart = this.getCart();
+				if (cart[itemId]) {
+					if (quantity <= 0) {
+						this.removeItem(itemId);
+					} else {
+						cart[itemId].quantity = quantity;
+						this.saveCart(cart);
+					}
+				}
+				this.updateCartDisplay();
+			},
+			
+			// Получить общее количество товаров в корзине
+			getTotalItems() {
+				const cart = this.getCart();
+				return Object.values(cart).reduce((total, item) => total + item.quantity, 0);
+			},
+			
+			// Обновить отображение корзины (можно добавить иконку корзины в header)
+			updateCartDisplay() {
+				const totalItems = this.getTotalItems();
+				// Обновляем индикатор корзины в header
+				const cartIndicator = document.getElementById('cart-indicator');
+				if (cartIndicator) {
+					if (totalItems > 0) {
+						cartIndicator.textContent = totalItems;
+						cartIndicator.style.display = 'inline';
+					} else {
+						cartIndicator.style.display = 'none';
+					}
+				}
+				console.log(`В корзине: ${totalItems} товаров`);
+			}
+		};
+		
+		// Инициализация корзины при загрузке страницы
+		Cart.updateCartDisplay();
+		
 		// Каунтер для кнопки заказать
 		document.querySelectorAll('.menu-price-btn').forEach(button => {
 			let clickCount = 0;
@@ -85,11 +163,22 @@ foreach ($menu_items as $item) {
 					const numberSpan = this.querySelector('span:nth-child(2)');
 					const plusBtn = this.querySelector('span:last-child');
 					
+					// Получаем данные о блюде
+					const itemId = this.getAttribute('data-item-id');
+					const itemName = this.closest('.menu-card').querySelector('.menu-card-text h1').textContent;
+					const itemPrice = this.closest('.menu-card').querySelector('.price h1').textContent.replace('от ', '').replace(' ₽', '');
+					
+					// Добавляем в корзину
+					Cart.addItem(itemId, itemName, itemPrice, 1);
+					clickCount = 1;
+					
 					minusBtn.addEventListener('click', (e) => {
 						e.stopPropagation();
 						if (clickCount > 0) {
 							clickCount--;
 							numberSpan.textContent = clickCount;
+							Cart.updateQuantity(itemId, clickCount);
+							
 							if (clickCount === 0) {
 								this.innerHTML = 'Заказать';
 								this.style.backgroundColor = '';
@@ -104,6 +193,61 @@ foreach ($menu_items as $item) {
 						e.stopPropagation();
 						clickCount++;
 						numberSpan.textContent = clickCount;
+						Cart.updateQuantity(itemId, clickCount);
+					});
+				}
+			});
+		});
+		
+		// Восстанавливаем состояние кнопок при загрузке страницы
+		document.addEventListener('DOMContentLoaded', function() {
+			const cart = Cart.getCart();
+			document.querySelectorAll('.menu-price-btn').forEach(button => {
+				const itemId = button.getAttribute('data-item-id');
+				if (cart[itemId] && cart[itemId].quantity > 0) {
+					// Восстанавливаем состояние кнопки
+					const counterHTML = `
+						<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 0 5px;">
+							<span style="cursor: pointer; font-size: 24px; font-weight: bold; line-height: 1;">-</span>
+							<span style="min-width: 20px; text-align: center; font-size: 20px; font-weight: bold;">${cart[itemId].quantity}</span>
+							<span style="cursor: pointer; font-size: 24px; font-weight: bold; line-height: 1;">+</span>
+						</div>
+					`;
+					button.innerHTML = counterHTML;
+					button.style.backgroundColor = '#4e4f52';
+					button.style.transition = 'background-color 0.3s ease';
+					button.style.padding = '5px 10px';
+					button.style.minWidth = '120px';
+					
+					// Добавляем обработчики событий
+					const minusBtn = button.querySelector('span:first-child');
+					const numberSpan = button.querySelector('span:nth-child(2)');
+					const plusBtn = button.querySelector('span:last-child');
+					
+					let clickCount = cart[itemId].quantity;
+					
+					minusBtn.addEventListener('click', (e) => {
+						e.stopPropagation();
+						if (clickCount > 0) {
+							clickCount--;
+							numberSpan.textContent = clickCount;
+							Cart.updateQuantity(itemId, clickCount);
+							
+							if (clickCount === 0) {
+								button.innerHTML = 'Заказать';
+								button.style.backgroundColor = '';
+								button.style.minWidth = '';
+								button.style.padding = '';
+								clickCount = 0;
+							}
+						}
+					});
+					
+					plusBtn.addEventListener('click', (e) => {
+						e.stopPropagation();
+						clickCount++;
+						numberSpan.textContent = clickCount;
+						Cart.updateQuantity(itemId, clickCount);
 					});
 				}
 			});

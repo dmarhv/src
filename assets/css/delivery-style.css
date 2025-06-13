@@ -239,7 +239,7 @@ body .progress_inner__status .box_string {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 50%;
+	top: 40%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 	margin: auto;

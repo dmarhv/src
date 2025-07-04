@@ -1179,12 +1179,13 @@ footer{
 	font-size: 26px;
 	font-family: "Montserrat-Bold";
 }
-.sostav{
+.sostav {
 	-webkit-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 0px 30px 1px rgba(0, 0, 0, 0.1);
 	width: 350px;
-	height: 500px;
+	height: auto;
+	min-height: 530px;
 	border-radius: 8px;
 }
 .promo-cart-price{
@@ -1222,6 +1223,7 @@ footer{
 .sostav h3{
 	text-align: center;
 	margin-top: 30px;
+	margin-bottom: 15px;
 	font-size: 14px;
 	color: #7c7b7b;
 	font-family: "Montserrat-Bold";
@@ -1230,10 +1232,14 @@ footer{
 	color: #7c7b7b;
 	font-size: 16px;
 }
+.zakaz-price-h3{
+	margin-top: -50px;
+}
+
 .payment-wethod-wrap{
 	width: 1300px;
 	margin: 0 auto;
-	margin-top: -120px;
+	margin-top: -100px;
 }
 .payment-wethod{
 	width: 780px;
@@ -1473,6 +1479,8 @@ footer{
 
 .cart-items {
     flex: 1;
+    max-height: 350px;
+    overflow-y: auto;
 }
 
 .cart-footer {
@@ -1594,4 +1602,144 @@ footer{
     font-size: 12px;
     margin-left: 5px;
     display: none;
+}
+
+#email-error {
+  display: none;
+  color: red;
+  margin-left: 185px;
+}
+
+/* DaData: подсказки строго под полем адреса */
+#input-address-order {
+    position: relative;
+    z-index: 10;
+}
+.suggestions-wrapper {
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+}
+/* Только для поля адреса */
+#input-address-order + .suggestions-wrapper,
+.suggestions-wrapper[data-input-id='input-address-order'] {
+    left: 0 !important;
+    right: auto !important;
+    top: 100% !important;
+    z-index: 9999;
+}
+.label-order { position: relative; }
+
+.order-input-address {
+    outline: none;
+    border: 2px solid #E3ECF5;
+    height: 40px;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px 0;
+    border-radius: 8px;
+    background-color: #F1F2F5;
+    padding-left: 14px;
+    font-size: 19px;
+    font-family: "Montserrat-SemiBold";
+    box-sizing: border-box;
+    display: block;
+	 width: 600px !important;
+}
+
+@media (max-width: 600px) {
+  .man-with-pizza-order,
+  .women-with-pizza-order {
+    display: none !important;
+  }
+  html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .delivery-order-h1,
+  .delivery-order,
+  .promocode-cart,
+  .payment-wethod-wrap,
+  .oformlenie-wrap {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0;
+    padding: 0 5px;
+    box-sizing: border-box;
+  }
+  .payment-wethod{
+	height: 290px;
+  }
+  .delivery-order-h1 {
+    margin-top: 50px !important;
+  }
+  .delivery-order {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .order-info {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+  }
+  .label-order {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .label-order p {
+    width: auto;
+    padding-top: 10px;
+    height: auto;
+    font-size: 16px;
+  }
+  .order-input,
+  .order-input-address {
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+  .sostav {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+  .payment-wethod {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .checkboxes__item-2 {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .sdacha {
+    width: 100% !important;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .sdacha-text {
+    width: 100% !important;
+    margin-left: 0;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .btn-next-oformlenie {
+    width: 100% !important;
+    margin-left: 0;
+    font-size: 18px;
+    height: 45px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .oformlenie-next{
+	margin-bottom: 100px;
+  }
 }

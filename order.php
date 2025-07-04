@@ -25,11 +25,12 @@
 				</div>
 				<div class="label-order">
 					<p>E-mail</p>
-					<input type="tel" name="" placeholder="Введите почту" id="input-email-order" class="order-input">
+					<input type="email" name="" placeholder="Введите почту" id="input-email-order" class="order-input" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
 				</div>
-				<div class="label-order">
+				<div id="email-error"><i>Email не подходит</i></div>
+				<div class="label-order label-order-address">
 					<p>Адрес доставки</p>
-					<input type="text" name="" placeholder="Введите адрес" id="input-name-order" class="order-input">
+					<input type="text" name="" placeholder="Введите адрес" id="input-address-order" class="order-input-address">
 				</div>
 				<div class="label-order">
 					<p>Время доставки</p>
@@ -76,7 +77,7 @@
 					<h2>Сумма заказа</h2>
 					<p id="total-price">0 ₽</p>
 				</div>
-				<h3>Бесплатная доставка</h3>
+				<h3 class="zakaz-price-h3">Бесплатная доставка</h3>
 			</div>
 		</div>
 		<div class="payment-wethod-wrap wow fadeIn">
@@ -123,5 +124,58 @@
 	<script src="assets/js/modals.js"></script>
 	<script src="assets/js/init.js"></script>
 	<script src="assets/js/wow.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/css/suggestions.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@latest/dist/js/jquery.suggestions.min.js"></script>
+<script>
+	
+// Проверка email
+const emailInput = document.getElementById('input-email-order');
+const emailError = document.getElementById('email-error');
+
+emailInput.addEventListener('input', function() {
+	if (emailInput.value === '') {
+		emailError.style.display = 'none';
+	} else if (emailInput.validity.valid) {
+		emailError.style.display = 'none';
+	} else {
+		emailError.style.display = 'block';
+	}
+});
+
+$(function() {
+  $("#input-address-order").suggestions({
+    token: "14ff6ff9ae29e1845b2c483378351b8284693992",
+    type: "ADDRESS",
+    onSelect: function(suggestion) {
+      // suggestion.value — выбранный адрес
+    }
+  });
+
+  // Фиксация позиции и ширины подсказок DaData
+  function fixDadataPosition() {
+    var $input = $("#input-address-order");
+    var $wrapper = $(".suggestions-wrapper");
+    if ($input.length && $wrapper.length) {
+      var offset = $input.offset();
+      var width = $input.outerWidth();
+      $wrapper.css({
+        "position": "absolute",
+        "left": offset.left + "px",
+        "top": (offset.top + $input.outerHeight()) + "px",
+        "width": width + "px",
+        "z-index": 9999,
+		  "margin-left": "180px"
+      });
+    }
+  }
+  $("#input-address-order").on("focus input", function() {
+    setTimeout(fixDadataPosition, 100);
+  });
+  $(window).on("resize scroll", function() {
+    fixDadataPosition();
+  });
+});
+</script>
 </body>
 </html>

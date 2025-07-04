@@ -15,19 +15,16 @@
 			</div>
 		</div>
 		<div class="menu">
-			<div class="main-nav">	
+			<div class="main-nav">
 				<a href="index.php" class="menu-link">Главная</a>
 				<a href="menu.php" class="menu-link">Меню</a>
-				<a href="contacts.php" class="menu-link">Контакты</a>
 				<a href="delivery.php" class="menu-link">Доставка</a>
-				<a href="promotion.php" class="sale-link">Акции</a>
 			</div>
 			<div class="profile-menu">
 				<a href="order.php" class="profile-link">
 					<i>Заказ</i>
 					<span id="cart-indicator" class="cart-indicator">0</span>
 				</a>
-				
 			</div>
 		</div>
 	</div>

@@ -32,7 +32,7 @@
             <div class="rectangle">
                 <div class="rectangle-social"><img src="assets/image/social/facebook.png" alt=""></div>
                 <div class="rectangle-social"><img src="assets/image/social/viber.png" alt=""></div>
-                <div class="rectangle-social"><img src="assets/image/social/skype.png" alt=""></div>
+                <div class="rectangle-social"><img style="width: 30px; height: 30px;" src="assets/image/social/youtube.png" alt=""></div>
                 <div class="rectangle-social"><img src="assets/image/social/telegram.png" alt=""></div>
             </div>
             <div class="rectangle">
